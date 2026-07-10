@@ -1,0 +1,51 @@
+{
+  "match_score": 88,
+  "matched_skills": [
+    "Python",
+    "PyTorch",
+    "Scikit-Learn",
+    "Generative AI",
+    "NLP",
+    "LangChain",
+    "Vector Databases",
+    "Pinecone",
+    "RAG",
+    "Docker",
+    "AWS",
+    "FastAPI",
+    "Apache Spark",
+    "Pandas",
+    "NumPy"
+  ],
+  "missing_skills": [
+    "MLOps Pipelines",
+    "Model Registry",
+    "LlamaIndex",
+    "GPU Hardware Optimization"
+  ],
+  "strengths": [
+    "Designed and deployed a production-grade RAG pipeline using LangChain, Pinecone, and Gemini with clear business impacts (45% support speed improvement, 94% accuracy).",
+    "Practical expertise fine-tuning LLMs (Llama-3, Mistral) using parameter-efficient methods (LoRA/QLoRA) with 30% latency reductions.",
+    "Excellent software engineering standards with Docker containerization and cloud deployments on AWS EKS."
+  ],
+  "weaknesses": [
+    "Lacks direct mention of LlamaIndex (only LangChain is listed).",
+    "Minimal exposure to model registries (like MLflow) and formal MLOps deployment cycles.",
+    "No stated background in low-level GPU acceleration or direct hardware-level inference optimizations."
+  ],
+  "resume_improvements": [
+    "Add LlamaIndex to your GenAI skills block to highlight familiarity with alternate orchestrators.",
+    "Mention specific MLOps tools (such as MLflow, DVC, or Weights & Biases) if you have used them in past projects.",
+    "Flesh out the AWS EKS section by adding details on CI/CD tooling (e.g., GitHub Actions, GitLab CI) used during deployment."
+  ],
+  "interview_questions": [
+    "Your resume mentions a 30% reduction in inference latency after LLM fine-tuning. Can you explain the benchmark methodology you used and how QLoRA influenced these latency characteristics?",
+    "While your experience with LangChain is extensive, the job description requests LlamaIndex. In what scenarios would you choose LlamaIndex over LangChain for indexing unstructured knowledge bases?",
+    "How would you approach configuring continuous integration and delivery (CI/CD) pipelines to safely rebuild and deploy your FastAPI model container to AWS EKS when updating model weights?"
+  ],
+  "recommended_courses": [
+    "DeepLearning.AI: Building RAG Agents with LlamaIndex",
+    "Coursera: ML Engineering for Production (MLOps) Specialization by DeepLearning.AI",
+    "NVIDIA Deep Learning Institute: Model Parallelism and Optimization for Large Language Models"
+  ]
+}

@@ -1,0 +1,28 @@
+Position: Senior Generative AI / Machine Learning Engineer
+Location: Remote (US)
+Company: NextGen AI Platforms
+
+About Us:
+NextGen AI Platforms is building the next generation of enterprise Generative AI workflows. We empower organizations to deploy guardrailed, fast, and highly-accurate RAG agents, custom-fine-tuned LLMs, and semantic search interfaces at scale.
+
+Key Responsibilities:
+- Design and implement production-ready Generative AI architectures, specifically Retrieval-Augmented Generation (RAG) and agentic frameworks.
+- Fine-tune large language models (LLMs) using modern parameter-efficient techniques (PEFT) like LoRA, QLoRA, and prefix tuning.
+- Generate high-dimensional vector embeddings, index them in Vector Databases (Pinecone, ChromaDB, Milvus), and optimize search retrieval.
+- Build high-throughput, low-latency REST APIs using Python, FastAPI, and Docker for deployment on cloud platforms (AWS, GCP).
+- Collaborate with frontend engineers to build interactive dashboard prototypes in Streamlit or React.
+- Set up scalable ML pipelines (ETL) to preprocess unstructured text data using tools like Apache Spark, Pandas, and NumPy.
+
+Required Qualifications:
+- Bachelor's or Master's degree in Computer Science, Machine Learning, or a related technical field.
+- 3+ years of professional experience as a Machine Learning Engineer or Generative AI Engineer.
+- Proficient in Python programming and deep learning frameworks (PyTorch preferred).
+- Hands-on experience with NLP and GenAI ecosystems: Hugging Face Transformers, LangChain, LlamaIndex.
+- Solid understanding of vector databases and embedding search.
+- Strong experience with Docker containerization and cloud orchestration (AWS EKS or GCP GKE).
+
+Preferred Qualifications:
+- Experience deploying and optimizing large language models on specialized GPU hardware.
+- Strong understanding of MLOps pipelines, model registry, and CI/CD tools.
+- Familiarity with Scikit-Learn for traditional machine learning classification and evaluation.
+- Active contributor to open-source GenAI frameworks.
