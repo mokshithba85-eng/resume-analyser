@@ -1,9 +1,3 @@
-"""
-Main application file for Semantic Resume Matcher Streamlit Dashboard.
-
-Provides a modern, premium user interface for parsing resume PDFs, pasting job
-descriptions, and displaying similarity metrics alongside Gemini LLM suggestions.
-"""
 
 import os
 import streamlit as st
@@ -29,24 +23,21 @@ st.set_page_config(
 CUSTOM_CSS = """
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
-    
-    /* Font bindings */
+
     html, body, [class*="css"] {
         font-family: 'Outfit', sans-serif;
     }
     
-    /* Remove padding around main content */
+
     .block-container {
         padding-top: 1.5rem;
         padding-bottom: 2rem;
     }
 
-    /* Style titles */
     h1, h2, h3 {
         font-family: 'Outfit', sans-serif;
     }
-    
-    /* Subheading style */
+
     .section-subheader {
         font-size: 1.15rem;
         font-weight: 600;
@@ -61,18 +52,12 @@ st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
 
 def render_skill_badges(skills: list, theme: str = "success") -> None:
-    """
-    Renders list elements as HTML pill badges on the dashboard.
-
-    Args:
-        skills (list): List of skill name strings.
-        theme (str): Visual palette. Either 'success' (green) or 'danger' (red).
-    """
+  
     if not skills:
         st.write("*No specific skills highlighted in this category.*")
         return
 
-    # Theme definitions matching professional HSL palettes
+   
     if theme == "success":
         bg = "#DCFCE7"       # Soft green
         text = "#166534"     # Dark green
@@ -105,14 +90,11 @@ def render_skill_badges(skills: list, theme: str = "success") -> None:
 
 
 def initialize_app() -> None:
-    """
-    Sets up the application title, banner, and default session states.
-    """
-    # Initialize session state for storing evaluation results across clicks
+  
     if "analysis_results" not in st.session_state:
         st.session_state.analysis_results = None
 
-    # Header Card with Gradient Styling
+ 
     header_html = """
     <div style="
         background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
@@ -132,18 +114,16 @@ def initialize_app() -> None:
 
 
 def main() -> None:
-    """
-    Main function containing dashboard structure and application logic.
-    """
+  
     initialize_app()
 
-    # Retrieve default API Key from system variables
+   
     env_api_key = os.getenv("GEMINI_API_KEY", "")
 
-    # Sidebar layout for Inputs
+   
     st.sidebar.markdown("### ⚙️ Control Panel")
     
-    # API key field (fall back to .env if present)
+   
     api_key_input = st.sidebar.text_input(
         "Google Gemini API Key",
         value=env_api_key,
@@ -233,13 +213,13 @@ def main() -> None:
             st.error(f"❌ Analysis Failed: {str(e)}")
             st.info("💡 Please verify that your Gemini API key is valid and has access to 'gemini-2.5-flash' and 'text-embedding-004'.")
 
-    # Render dashboard results if available in session state
+  
     if st.session_state.analysis_results:
         results = st.session_state.analysis_results
         cosine_score = results["cosine_score"]
         analysis_data = results["analysis_data"]
 
-        # --- ROW 1: MATCH SCORES ---
+      
         st.markdown("### 📊 Matching Metrics")
         col1, col2 = st.columns(2)
 
@@ -260,7 +240,7 @@ def main() -> None:
                 """,
                 unsafe_allow_html=True
             )
-            # Render a custom progress bar below
+          
             st.progress(min(max(cosine_score / 100.0, 0.0), 1.0))
 
         with col2:
@@ -281,12 +261,12 @@ def main() -> None:
                 """,
                 unsafe_allow_html=True
             )
-            # Render a custom progress bar below
+           
             st.progress(min(max(qualitative_score / 100.0, 0.0), 1.0))
 
         st.divider()
 
-        # --- ROW 2: SKILLS GAP ANALYSIS ---
+       
         st.markdown("### 🧩 Skills Alignment Check")
         col_skills_1, col_skills_2 = st.columns(2)
 
@@ -300,7 +280,7 @@ def main() -> None:
 
         st.divider()
 
-        # --- ROW 3: STRENGTHS & WEAKNESSES ---
+      
         st.markdown("### 🔍 Evaluation Profile")
         col_eval_1, col_eval_2 = st.columns(2)
 
@@ -359,7 +339,7 @@ def main() -> None:
 
         st.divider()
 
-        # --- ROW 5: EXPORTS & DOWNLOADS ---
+      
         st.markdown("### 📥 Document Exports")
         try:
             pdf_bytes = generate_pdf_report(analysis_data, cosine_score)
